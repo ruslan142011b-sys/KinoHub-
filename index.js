@@ -85,4 +85,9 @@ bot.on("callback_query:data", async (ctx) => {
 });
 
 bot.start();
+const http = require("http");
+http.createServer((req, res) => {
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end("KinoHub is running!\n");
+}).listen(process.env.PORT || 3000);
 console.log("KinoHub запущен!");
